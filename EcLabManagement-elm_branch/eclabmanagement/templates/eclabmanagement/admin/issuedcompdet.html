@@ -1,0 +1,53 @@
+{% extends 'eclabmanagement/admin/base.html' %}
+{% load static %}
+{% block content %}
+
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center bg-primary">
+                <div class="container">
+                    <div class="banner_content text-center">
+                        <h2>Issued Component details</h2>
+                        <!--<div class="page_link">
+                            <a href="index.html">Home</a>
+                            <a href="cart.html">Cart</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        <section class="cart_area">
+            <div class="container">
+                <div class="table-responsive table-bordered ">
+                <table class="table ">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">S-no</th>
+                            <th scope="col">Student name</th>
+                            <th scope="col">Packet</th>
+                            <th scope="col">Issue Date</th>
+                            <th scope="col">return date</th>
+                            <th scope="col">Returned Date</th>
+                            <th scope="col">Due Amount</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                          {% if all_details %}
+                            {% for each_detail in all_details%}
+                              <tr>
+                                
+                                {% for each_minute in each_detail %}
+                                  <td>{{ each_minute }}</td>
+                                {% endfor %}
+                              </tr>
+                            {% endfor %}
+                          {% endif %}
+                          
+                        </tbody>
+                      </table>
+                </div>
+        </div>
+        </section>
+{% endblock %}
